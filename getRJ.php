@@ -1,7 +1,7 @@
 <?php
 ini_set("display_errors", "OFF");
 
-$rjname=$_GET['rjname'];
+$rjname=isset($_GET['rjname']) ? $_GET['rjname'] : false;
 $nameflag=preg_match("/RJ\d{6}/", $rjname, $rjname);
 
 if($nameflag){
@@ -13,7 +13,7 @@ $url = "http://www.dlsite.com/";
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="./js/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 	RJName:
