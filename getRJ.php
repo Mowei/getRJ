@@ -37,7 +37,8 @@ echo "	[$group[1]]";
 echo "[".$date[1][2].$date[1][3].$date[1][7].$date[1][8].$date[1][12].$date[1][13]."]";
 echo "[$rjname[1]]";
 echo "$name[1]";
-echo "($ani[1])";
+$ani[1]=isset($ani[1]) ? "($ani[1])":false;
+echo "$ani[1]";
 echo "</br>\n";
 }
 echo "	$url";
