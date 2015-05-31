@@ -30,8 +30,9 @@ $lines_string = implode('', $lines_array);
 preg_match("/<span itemprop=\"brand\">(.*)<\/span><\/a>/", $lines_string, $group);
 preg_match("/\">(.*)<\/a><\/td><\/tr>/", $lines_string, $date);
 preg_match("/http:\/\/www.dlsite.com\/maniax\/work\/=\/product_id\/(.*).html\"/", $lines_string, $rjname);
-preg_match("/id=\"work_name\">(.*)<\/h1>/", $lines_string, $name);
+preg_match("/id=\"work_name\".*>(.*)<\/h1>/", $lines_string, $name);
 preg_match("/title=\"(動画作品)\"/", $lines_string, $ani);
+preg_match("/title=\"(音声作品)\"/", $lines_string, $voice);
 
 echo "	[$group[1]]";
 echo "[".$date[1][2].$date[1][3].$date[1][7].$date[1][8].$date[1][12].$date[1][13]."]";
@@ -39,6 +40,8 @@ echo "[$rjname[1]]";
 echo "$name[1]";
 $ani[1]=isset($ani[1]) ? "($ani[1])":false;
 echo "$ani[1]";
+$voice[1]=isset($voice[1]) ? "($voice[1])":false;
+echo "$voice[1]";
 echo "</br>\n";
 }
 echo "	$url";
